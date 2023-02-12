@@ -6,7 +6,7 @@ const width = window.innerWidth;
 const height = window.innerHeight;
 
 const unitLengthX = width / cellsHorizontal;
-const unitLengthY = width / cellsVertical;
+const unitLengthY = height / cellsVertical;
 
 const engine = Engine.create();
 engine.world.gravity.y = 0
@@ -39,7 +39,7 @@ const shuffle = (arr) => {
     let counter = arr.length;
 
     while (counter > 0) {
-        const index = Math.floor((Math.random()) * counter);
+        const index = Math.floor(Math.random() * counter);
 
         counter--;
 
@@ -167,8 +167,8 @@ verticals.forEach((row, rowIndex) => {
 const goal = Bodies.rectangle(
     width - unitLengthX / 2,
     height - unitLengthY / 2,
-    unitLengthX * .7,
-    unitLengthY * .7,
+    unitLengthX * 0.7,
+    unitLengthY * 0.7,
     {
         label: 'goal',
         isStatic: true,
